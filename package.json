@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "cat-me": "^1.0.3",
+    "express": "^5.1.0",
+    "mongoose": "^8.19.1",
+    "prompt-sync": "^4.2.0"
+  },
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sanjay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
