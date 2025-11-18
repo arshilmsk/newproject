@@ -76,37 +76,57 @@ let final = document.querySelector('#final');
 let h1 = document.querySelectorAll('h1');
 let button = document.querySelector('button');
 
-final.style.position = 'absolute';
-final.style.left = '50%'
-final.style.top = '50%'
-final.style.transform = 'translate(-50%,-50%)';
-final.style.display = 'flex';
-final.style.flexDirection = 'column';
-final.style.alignItems = 'center'
-final.style.gap = '5rem'
 
-h1[0].style.color = 'green';
-h1[0].style.fontFamily = 'Cambria'
+Object.assign(final.style, {
+    position : 'absolute',
+    left: '50%',
+    top : '50%',
+    transform : 'translate(-50%,-50%)',
+    display : 'flex',
+    flexDirection : 'column',
+    alignItems : 'center',
+    gap : '5rem'
+})
+// final.style.position = 'absolute';
+// final.style.left = '50%'
+// final.style.top = '50%'
+// final.style.transform = 'translate(-50%,-50%)';
+// final.style.display = 'flex';
+// final.style.flexDirection = 'column';
+// final.style.alignItems = 'center'
+// final.style.gap = '5rem'
 
-h1[1].style.backgroundColor = 'mediumaquamarine';
-h1[1].style.padding = '1rem';
-h1[1].style.borderRadius = '1.3rem';
-h1[1].style.border = '2px solid black';
-h1[1].style.color = 'Green'
-h1[1].style.backgroundColor = '#1eff0051'
-h1[1].style.fontSize = '15rem'
 
-button.style.backgroundColor = '#d0ff34ff';
-button.style.fontSize = '1rem';
-button.style.padding = '1rem';
-button.style.borderRadius = '.9rem'
+Object.assign(h1[0].style, {
+    color: 'green',
+    fontFamily: 'Cambria',
+})
+
+Object.assign(h1[1].style, {
+    backgroundColor: 'mediumaquamarine',
+    padding: '1rem',
+    borderRadius: '1.3rem',
+    border: '2px solid black',
+    color: 'Green',
+    backgroundColor: '#1eff0051',
+    fontSize: '10rem'
+})
+
+Object.assign(button.style,{
+    backgroundColor: '#d0ff34ff',
+    fontSize: '1rem',
+    padding: '1rem',
+    borderRadius: '.9rem',
+})
 
 
 button.addEventListener('click', function(){
     let temp = Math.floor(Math.random()*arr.length);
-    h1[1].innerHTML = arr[temp].name;
-    h1[1].style.color = arr[temp].primary;
-    h1[1].style.backgroundColor = arr[temp].secondary;
+    h1[1].innerHTML= arr[temp].name;
+    Object.assign(h1[1].style,{
+        color: arr[temp].primary,
+        backgroundColor: arr[temp].secondary,
+    })
 })
 
 button.addEventListener('mousedown', function(){ 
